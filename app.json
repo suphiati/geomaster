@@ -58,9 +58,11 @@
       "reactCompiler": false
     },
     "extra": {
+      "router": {},
       "eas": {
-        "projectId": "YOUR_EAS_PROJECT_ID_HERE"
+        "projectId": "2390212f-f565-4e02-a8e2-6f78e388ec64"
       }
-    }
+    },
+    "owner": "suphi_atilim"
   }
 }
