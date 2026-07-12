@@ -18,6 +18,10 @@ expo-env.d.ts
 *.key
 *.mobileprovision
 
+# Android signing & Play Store secrets (never commit)
+*.keystore
+google-play-key.json
+
 # Metro
 .metro-health-check*
 
@@ -41,3 +45,14 @@ app-example
 # generated native folders
 /ios
 /android
+
+# IDE
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Claude Code kişisel ayarları (paylaşılan launch.json/settings.json commit edilebilir)
+.claude/settings.local.json
+
+# Geçici / üretilmiş veri ara dosyaları
+*.log

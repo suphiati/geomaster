@@ -1,0 +1,230 @@
+{
+  "common": {
+    "back": "Geri",
+    "close": "Kapat",
+    "continue": "Devam",
+    "confirm": "Onayla",
+    "cancel": "İptal",
+    "retry": "Tekrar Dene",
+    "loading": "Yükleniyor...",
+    "error": "Bir hata oluştu",
+    "yes": "Evet",
+    "no": "Hayır",
+    "ok": "Tamam"
+  },
+  "tabs": {
+    "home": "Anasayfa",
+    "explore": "Keşfet",
+    "quiz": "Quiz",
+    "map": "Harita",
+    "profile": "Profil"
+  },
+  "home": {
+    "welcome": "HOŞ GELDİN",
+    "title": "GeoMaster 🌍",
+    "quickStart": "Hızlı Başlat",
+    "quickStartDesc": "Klasik mod ile bilgini test et",
+    "streakLabel": "STREAK",
+    "streakUnit": "gün",
+    "quizLabel": "QUIZ",
+    "quizUnit": "tamamlanan",
+    "encyclopediaTitle": "Ülke Ansiklopedisi",
+    "encyclopediaDesc": "Tüm ülkelerin verisi",
+    "summaryLabel": "BUGÜNE KADAR",
+    "noQuizYet": "Henüz quiz oynamadın. İlk testini yapmak için yukarıdaki Hızlı Başlat'a dokun.",
+    "startQuiz": "Quiz'e Başla",
+    "leaderboardSubtitle": "En yüksek skorların",
+    "quickStartA11y": "Hızlı başlat — Quiz mod seçimine git",
+    "summaryCorrect": " doğru cevap verdin. ",
+    "summaryXpEarned": " kazandın. Devam et!"
+  },
+  "explore": {
+    "title": "Keşfet",
+    "countCount_one": "{{count}} ülke",
+    "countCount_other": "{{count}} ülke",
+    "searchPlaceholder": "Ülke veya başkent ara...",
+    "filterAll": "Tümü",
+    "sortAZ": "A-Z",
+    "sortPopulation": "Nüfus",
+    "sortArea": "Alan",
+    "emptyTitle": "Sonuç yok",
+    "emptyDesc": "Aramanı veya filtrelerini değiştirmeyi dene."
+  },
+  "quiz": {
+    "title": "Quiz Modları",
+    "subtitle": "Bir mod seç ve teste başla",
+    "modes": {
+      "classic": "Klasik",
+      "flag_match": "Bayrak Eşleştirme",
+      "map_pin": "Haritada Bul",
+      "silhouette": "Silüet Tahmini",
+      "neighbor_chain": "Komşu Zinciri",
+      "speed_round": "Hız Turu",
+      "true_false": "Doğru / Yanlış",
+      "daily_challenge": "Günlük Challenge"
+    },
+    "modeDesc": {
+      "classic": "4 şıklı, can sistemli, klasik quiz deneyimi.",
+      "flag_match": "Hızlı tempolu bayrak-ülke eşleştirme.",
+      "neighbor_chain": "Komşu ülkelerden zincir kurarak hedefe ulaş.",
+      "speed_round": "60 saniyede en çok doğru cevabı ver.",
+      "true_false": "Bilgi cümlesi doğru mu, yanlış mı?",
+      "daily_challenge": "Her gün yeni ülke. 6 ipucu ile bul!"
+    },
+    "lockedSoon": "Yakında",
+    "answer": "Cevapla",
+    "showResult": "Sonucu Gör",
+    "correct": "Doğru!",
+    "wrong": "Yanlış",
+    "true": "DOĞRU",
+    "false": "YANLIŞ",
+    "noQuestions": "Soru üretilemedi",
+    "noQuestionsDesc": "Veri seti yetersiz. Daha fazla ülke verisi yüklenmeli.",
+    "result": {
+      "title": "Sonuç",
+      "perfect": "Mükemmel!",
+      "great": "Harika İş!",
+      "tryAgain": "Tekrar Dene",
+      "details": "Detaylar",
+      "correct": "Doğru",
+      "wrong": "Yanlış",
+      "longestStreak": "En uzun streak",
+      "totalTime": "Toplam süre",
+      "bonusXP": "Bonus XP",
+      "tryAgainCta": "Tekrar Dene",
+      "back": "Mod Seçimine Dön",
+      "correctSummary": "{{correct}} / {{total}} doğru (%{{pct}})"
+    }
+  },
+  "profile": {
+    "title": "Profil",
+    "stats": {
+      "streak": "Streak",
+      "correct": "Doğru",
+      "accuracy": "Doğruluk"
+    },
+    "totalsTitle": "Toplam İstatistik",
+    "quizCount": "Quiz sayısı",
+    "wrongCount": "Yanlış cevap",
+    "totalXP": "Toplam XP",
+    "badges": "Rozetler",
+    "earned": "kazanıldı",
+    "locked": "kilitli",
+    "continentProgress": "Kıta İlerlemesi"
+  },
+  "country": {
+    "general": "Genel",
+    "political": "Siyasi & Yönetim",
+    "practical": "Pratik Bilgiler",
+    "neighbors": "Komşu Ülkeler",
+    "geography": "Coğrafya",
+    "majorCities": "Büyük Şehirler",
+    "funFacts": "Eğlenceli Bilgiler",
+    "flag": "Bayrak",
+    "capital": "Başkent",
+    "population": "Nüfus",
+    "area": "Yüzölçümü",
+    "coastline": "Kıyı uzunluğu",
+    "languages": "Resmi dil(ler)",
+    "currency": "Para birimi",
+    "government": "Yönetim biçimi",
+    "independence": "Bağımsızlık",
+    "unMembership": "BM üyeliği",
+    "memberships": "Üyelikler",
+    "callingCode": "Telefon kodu",
+    "tld": "Alan adı (TLD)",
+    "drivingSide": "Sürüş yönü",
+    "timezone": "Saat dilimi",
+    "nationalDay": "Ulusal gün",
+    "highestPoint": "En yüksek nokta",
+    "longestRiver": "En uzun nehir",
+    "largestLake": "En büyük göl",
+    "drivingLeft": "Sol",
+    "drivingRight": "Sağ",
+    "notFound": "Ülke bulunamadı",
+    "notFoundDesc": "{{id}} kodlu ülke veri tabanında yok.",
+    "colors": "Renkler"
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "language": "Dil",
+    "theme": "Tema",
+    "themeSystem": "Sistem",
+    "themeDark": "Koyu",
+    "themeLight": "Açık",
+    "sound": "Ses Efektleri",
+    "haptics": "Titreşim Geri Bildirimi",
+    "about": "Hakkında",
+    "version": "Versiyon",
+    "resetData": "Verileri Sıfırla",
+    "resetConfirm": "Tüm ilerleme kalıcı olarak silinecek. Devam edilsin mi?",
+    "resetDone": "Veriler sıfırlandı"
+  },
+  "difficulty": {
+    "easy": "Kolay",
+    "medium": "Orta",
+    "hard": "Zor",
+    "expert": "Uzman"
+  },
+  "level": {
+    "levelLabel": "SEVİYE",
+    "next": "Sonraki: Seviye {{level}}",
+    "maxReached": "🎉 En yüksek seviyeye ulaştın!"
+  },
+  "continents": {
+    "Afrika": "Afrika",
+    "Asya": "Asya",
+    "Avrupa": "Avrupa",
+    "Kuzey Amerika": "Kuzey Amerika",
+    "Güney Amerika": "Güney Amerika",
+    "Okyanusya": "Okyanusya"
+  },
+  "onboarding": {
+    "slide1Title": "Dünyayı Keşfet",
+    "slide1Desc": "245 ülkenin coğrafi, siyasi ve kültürel verisini içeren kapsamlı ansiklopedi.",
+    "slide2Title": "6 Farklı Quiz Modu",
+    "slide2Desc": "Klasik testten bayrak eşleştirmeye, komşu zincirinden hız turuna 6 mod seni bekliyor.",
+    "slide3Title": "Seviye Atla, Rozet Topla",
+    "slide3Desc": "XP kazan, 50 seviye boyunca ilerle, her başarımda yeni rozetler kazan.",
+    "skip": "Atla",
+    "next": "Devam",
+    "start": "Başla"
+  },
+  "leaderboard": {
+    "title": "Liderlik Tablosu",
+    "empty": "Henüz kayıt yok",
+    "emptyDesc": "Quiz oynadıkça en yüksek skorların burada listelenecek."
+  },
+  "quizExtra": {
+    "wrongAnswers": "Yanlış Cevaplar",
+    "yourAnswer": "Senin cevabın",
+    "correctAnswer": "Doğru cevap",
+    "notAnswered": "Cevaplanmadı"
+  },
+  "neighborChain": {
+    "start": "BAŞLANGIÇ",
+    "target": "HEDEF",
+    "optimalPath": "Optimal: {{optimal}} adım • Senin yolun: {{player}} adım",
+    "neighborsOf": "{{country}} → komşuları",
+    "noNeighbors": "Bu ülkenin tanımlı komşusu yok. (Ada/iç ülke)",
+    "undo": "Geri Al",
+    "giveUp": "Pes Et",
+    "noPath": "Yol bulunamadı",
+    "noPathDesc": "Bu modu oynamak için daha geniş ülke veri seti gerekiyor."
+  },
+  "daily": {
+    "instruction": "Bugünün ülkesini bul. Her yanlış tahmin yeni bir ipucu açar.",
+    "revealHint": "İpucu Aç",
+    "congrats": "Tebrikler!",
+    "failed": "Bilemedin!",
+    "answerLabel": "Cevap:",
+    "xpWon": "+{{xp}} XP kazandın",
+    "xpConsolation": "+10 XP teselli",
+    "finish": "Bitir",
+    "guessPlaceholder": "Tahmin et... ({{left}} hak)",
+    "previousGuesses": "ÖNCEKİ TAHMİNLER"
+  },
+  "flagMatch": {
+    "whichFlag": "Bu bayrak hangi ülkeye ait?"
+  }
+}

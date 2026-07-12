@@ -1,35 +1,75 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+/**
+ * Alt tab navigasyon yapılandırması.
+ * 4 tab: Anasayfa, Keşfet, Quiz, Profil.
+ */
 
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Tabs } from 'expo-router';
+import { useTranslation } from 'react-i18next';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+import { TYPOGRAPHY } from '@/constants/theme';
+import { useTheme } from '@/hooks/useTheme';
+
+type IconName = keyof typeof MaterialCommunityIcons.glyphMap;
+
+interface TabConfig {
+  name: string;
+  icon: IconName;
+  iconActive: IconName;
+}
+
+const TABS: readonly TabConfig[] = [
+  { name: 'home', icon: 'home-outline', iconActive: 'home' },
+  { name: 'explore', icon: 'earth', iconActive: 'earth' },
+  { name: 'quiz', icon: 'help-circle-outline', iconActive: 'help-circle' },
+  { name: 'profile', icon: 'account-outline', iconActive: 'account' },
+];
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+  const { palette } = useTheme();
+  const { t } = useTranslation();
+  const insets = useSafeAreaInsets();
 
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
+        tabBarActiveTintColor: palette.primary,
+        tabBarInactiveTintColor: palette.text.muted,
+        tabBarStyle: {
+          backgroundColor: palette.surface,
+          borderTopColor: palette.border,
+          height: 64 + insets.bottom,
+          paddingBottom: 8 + insets.bottom,
+          paddingTop: 8,
+        },
+        tabBarLabelStyle: {
+          ...TYPOGRAPHY.captionBold,
+          fontSize: 11,
+        },
+      }}
+    >
+      {TABS.map(({ name, icon, iconActive }) => {
+        const title = t(`tabs.${name}`);
+        return (
+        <Tabs.Screen
+          key={name}
+          name={name}
+          options={{
+            title,
+            tabBarAccessibilityLabel: title,
+            tabBarIcon: ({ color, focused, size }) => (
+              <MaterialCommunityIcons
+                name={focused ? iconActive : icon}
+                size={size ?? 26}
+                color={color}
+              />
+            ),
+          }}
+        />
+        );
+      })}
     </Tabs>
   );
 }

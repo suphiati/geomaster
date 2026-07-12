@@ -1,112 +1,164 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+/**
+ * Keşfet sekmesi: ülke ansiklopedisi.
+ * Arama, kıta filtresi ve sıralama ile filtrelenmiş ülke listesi.
+ */
 
-import { Collapsible } from '@/components/ui/collapsible';
-import { ExternalLink } from '@/components/external-link';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Fonts } from '@/constants/theme';
+import { useRouter } from 'expo-router';
+import { useCallback, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
 
-export default function TabTwoScreen() {
+import { Chip } from '@/components/ui/Chip';
+import { EmptyState } from '@/components/ui/EmptyState';
+import { ScreenContainer } from '@/components/ui/ScreenContainer';
+import { SearchBar } from '@/components/ui/SearchBar';
+import { CountryCard } from '@/components/country/CountryCard';
+import { SPACING, TYPOGRAPHY } from '@/constants/theme';
+import { useCountries, type CountrySortBy } from '@/hooks/useCountries';
+import { useTheme } from '@/hooks/useTheme';
+import type { Continent, Country } from '@/types';
+
+const CONTINENT_FILTERS: readonly { labelKey: string; value: Continent | 'all' }[] = [
+  { labelKey: 'explore.filterAll', value: 'all' },
+  { labelKey: 'continents.Avrupa', value: 'Avrupa' },
+  { labelKey: 'continents.Asya', value: 'Asya' },
+  { labelKey: 'continents.Afrika', value: 'Afrika' },
+  { labelKey: 'continents.Kuzey Amerika', value: 'Kuzey Amerika' },
+  { labelKey: 'continents.Güney Amerika', value: 'Güney Amerika' },
+  { labelKey: 'continents.Okyanusya', value: 'Okyanusya' },
+];
+
+const SORT_FILTERS: readonly { labelKey: string; value: CountrySortBy }[] = [
+  { labelKey: 'explore.sortAZ', value: 'name' },
+  { labelKey: 'explore.sortPopulation', value: 'population' },
+  { labelKey: 'explore.sortArea', value: 'area' },
+];
+
+export default function ExploreTab() {
+  const { palette } = useTheme();
+  const { t } = useTranslation();
+  const router = useRouter();
+  const [search, setSearch] = useState('');
+  const [continent, setContinent] = useState<Continent | 'all'>('all');
+  const [sortBy, setSortBy] = useState<CountrySortBy>('name');
+  const [desc, setDesc] = useState(false);
+
+  const countries = useCountries({ search, continent, sortBy, desc });
+
+  const handleCountryPress = useCallback(
+    (country: Country) => {
+      router.push({ pathname: '/country/[id]', params: { id: country.id } });
+    },
+    [router],
+  );
+
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-      headerImage={
-        <IconSymbol
-          size={310}
-          color="#808080"
-          name="chevron.left.forwardslash.chevron.right"
-          style={styles.headerImage}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText
-          type="title"
-          style={{
-            fontFamily: Fonts.rounded,
-          }}>
-          Explore
-        </ThemedText>
-      </ThemedView>
-      <ThemedText>This app includes example code to help you get started.</ThemedText>
-      <Collapsible title="File-based routing">
-        <ThemedText>
-          This app has two screens:{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/explore.tsx</ThemedText>
-        </ThemedText>
-        <ThemedText>
-          The layout file in <ThemedText type="defaultSemiBold">app/(tabs)/_layout.tsx</ThemedText>{' '}
-          sets up the tab navigator.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/router/introduction">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Android, iOS, and web support">
-        <ThemedText>
-          You can open this project on Android, iOS, and the web. To open the web version, press{' '}
-          <ThemedText type="defaultSemiBold">w</ThemedText> in the terminal running this project.
-        </ThemedText>
-      </Collapsible>
-      <Collapsible title="Images">
-        <ThemedText>
-          For static images, you can use the <ThemedText type="defaultSemiBold">@2x</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">@3x</ThemedText> suffixes to provide files for
-          different screen densities
-        </ThemedText>
-        <Image
-          source={require('@/assets/images/react-logo.png')}
-          style={{ width: 100, height: 100, alignSelf: 'center' }}
-        />
-        <ExternalLink href="https://reactnative.dev/docs/images">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Light and dark mode components">
-        <ThemedText>
-          This template has light and dark mode support. The{' '}
-          <ThemedText type="defaultSemiBold">useColorScheme()</ThemedText> hook lets you inspect
-          what the user&apos;s current color scheme is, and so you can adjust UI colors accordingly.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Animations">
-        <ThemedText>
-          This template includes an example of an animated component. The{' '}
-          <ThemedText type="defaultSemiBold">components/HelloWave.tsx</ThemedText> component uses
-          the powerful{' '}
-          <ThemedText type="defaultSemiBold" style={{ fontFamily: Fonts.mono }}>
-            react-native-reanimated
-          </ThemedText>{' '}
-          library to create a waving hand animation.
-        </ThemedText>
-        {Platform.select({
-          ios: (
-            <ThemedText>
-              The <ThemedText type="defaultSemiBold">components/ParallaxScrollView.tsx</ThemedText>{' '}
-              component provides a parallax effect for the header image.
-            </ThemedText>
-          ),
-        })}
-      </Collapsible>
-    </ParallaxScrollView>
+    <ScreenContainer>
+      <View style={styles.header}>
+        <Text style={[TYPOGRAPHY.h1, { color: palette.text.primary }]}>{t('explore.title')}</Text>
+        <Text style={[TYPOGRAPHY.bodySm, { color: palette.text.secondary, marginTop: 2 }]}>
+          {t('explore.countCount', { count: countries.length })}
+        </Text>
+      </View>
+
+      <SearchBar
+        value={search}
+        onChangeText={setSearch}
+        placeholder={t('explore.searchPlaceholder')}
+        style={{ marginTop: SPACING.sm }}
+      />
+
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={styles.chipRow}
+        style={[styles.filterRow, { marginTop: SPACING.md }]}
+      >
+        {CONTINENT_FILTERS.map((c) => (
+          <Chip
+            key={c.value}
+            label={t(c.labelKey)}
+            selected={continent === c.value}
+            onPress={() => setContinent(c.value)}
+            style={{ marginRight: SPACING.sm }}
+            accentColor={c.value !== 'all' ? palette.continents[c.value as Continent] : undefined}
+          />
+        ))}
+      </ScrollView>
+
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={styles.chipRow}
+        style={[styles.filterRow, { marginTop: SPACING.xs }]}
+      >
+        {SORT_FILTERS.map((s) => (
+          <Chip
+            key={s.value}
+            label={t(s.labelKey)}
+            icon={
+              sortBy === s.value
+                ? desc
+                  ? 'arrow-down'
+                  : 'arrow-up'
+                : undefined
+            }
+            selected={sortBy === s.value}
+            onPress={() => {
+              if (sortBy === s.value) {
+                setDesc((d) => !d);
+              } else {
+                setSortBy(s.value);
+                setDesc(s.value !== 'name');
+              }
+            }}
+            style={{ marginRight: SPACING.sm }}
+          />
+        ))}
+      </ScrollView>
+
+      <FlatList
+        data={countries}
+        keyExtractor={(c) => c.id}
+        style={styles.list}
+        contentContainerStyle={styles.listContent}
+        ItemSeparatorComponent={() => <View style={{ height: SPACING.sm }} />}
+        renderItem={({ item }) => <CountryCard country={item} onPress={handleCountryPress} />}
+        ListEmptyComponent={
+          <EmptyState
+            icon="map-search"
+            title={t('explore.emptyTitle')}
+            description={t('explore.emptyDesc')}
+          />
+        }
+        showsVerticalScrollIndicator={false}
+        initialNumToRender={12}
+        maxToRenderPerBatch={12}
+        windowSize={10}
+        removeClippedSubviews
+      />
+    </ScreenContainer>
   );
 }
 
 const styles = StyleSheet.create({
-  headerImage: {
-    color: '#808080',
-    bottom: -90,
-    left: -35,
-    position: 'absolute',
+  header: {
+    paddingTop: SPACING.sm,
+    paddingBottom: SPACING.xs,
   },
-  titleContainer: {
-    flexDirection: 'row',
-    gap: 8,
+  filterRow: {
+    flexGrow: 0,
+    flexShrink: 0,
+  },
+  chipRow: {
+    paddingVertical: SPACING.xs,
+    alignItems: 'center',
+  },
+  list: {
+    flex: 1,
+  },
+  listContent: {
+    paddingTop: SPACING.md,
+    paddingBottom: SPACING.xl,
   },
 });

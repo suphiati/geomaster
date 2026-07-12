@@ -1,0 +1,230 @@
+{
+  "common": {
+    "back": "Back",
+    "close": "Close",
+    "continue": "Continue",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "retry": "Try Again",
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "yes": "Yes",
+    "no": "No",
+    "ok": "OK"
+  },
+  "tabs": {
+    "home": "Home",
+    "explore": "Explore",
+    "quiz": "Quiz",
+    "map": "Map",
+    "profile": "Profile"
+  },
+  "home": {
+    "welcome": "WELCOME",
+    "title": "GeoMaster 🌍",
+    "quickStart": "Quick Start",
+    "quickStartDesc": "Test your knowledge with classic mode",
+    "streakLabel": "STREAK",
+    "streakUnit": "days",
+    "quizLabel": "QUIZ",
+    "quizUnit": "completed",
+    "encyclopediaTitle": "Country Encyclopedia",
+    "encyclopediaDesc": "Browse all country data",
+    "summaryLabel": "SO FAR",
+    "noQuizYet": "You haven't played any quiz yet. Tap Quick Start above to take your first quiz.",
+    "startQuiz": "Start Quiz",
+    "leaderboardSubtitle": "Your top scores",
+    "quickStartA11y": "Quick start — go to quiz mode selection",
+    "summaryCorrect": " correct answers so far. ",
+    "summaryXpEarned": " earned. Keep going!"
+  },
+  "explore": {
+    "title": "Explore",
+    "countCount_one": "{{count}} country",
+    "countCount_other": "{{count}} countries",
+    "searchPlaceholder": "Search country or capital...",
+    "filterAll": "All",
+    "sortAZ": "A-Z",
+    "sortPopulation": "Population",
+    "sortArea": "Area",
+    "emptyTitle": "No results",
+    "emptyDesc": "Try changing your search or filters."
+  },
+  "quiz": {
+    "title": "Quiz Modes",
+    "subtitle": "Pick a mode and start the test",
+    "modes": {
+      "classic": "Classic",
+      "flag_match": "Flag Match",
+      "map_pin": "Find on Map",
+      "silhouette": "Silhouette Guess",
+      "neighbor_chain": "Neighbor Chain",
+      "speed_round": "Speed Round",
+      "true_false": "True / False",
+      "daily_challenge": "Daily Challenge"
+    },
+    "modeDesc": {
+      "classic": "Classic quiz with 4 options and a lives system.",
+      "flag_match": "Fast-paced flag-to-country matching.",
+      "neighbor_chain": "Build a chain through neighboring countries to the target.",
+      "speed_round": "Answer as many as you can in 60 seconds.",
+      "true_false": "Is the statement true or false?",
+      "daily_challenge": "A new country every day. Find it with 6 hints!"
+    },
+    "lockedSoon": "Soon",
+    "answer": "Answer",
+    "showResult": "Show Result",
+    "correct": "Correct!",
+    "wrong": "Wrong",
+    "true": "TRUE",
+    "false": "FALSE",
+    "noQuestions": "No questions could be generated",
+    "noQuestionsDesc": "Insufficient dataset. More country data needed.",
+    "result": {
+      "title": "Result",
+      "perfect": "Perfect!",
+      "great": "Great Job!",
+      "tryAgain": "Try Again",
+      "details": "Details",
+      "correct": "Correct",
+      "wrong": "Wrong",
+      "longestStreak": "Longest streak",
+      "totalTime": "Total time",
+      "bonusXP": "Bonus XP",
+      "tryAgainCta": "Try Again",
+      "back": "Back to Modes",
+      "correctSummary": "{{correct}} / {{total}} correct ({{pct}}%)"
+    }
+  },
+  "profile": {
+    "title": "Profile",
+    "stats": {
+      "streak": "Streak",
+      "correct": "Correct",
+      "accuracy": "Accuracy"
+    },
+    "totalsTitle": "Total Stats",
+    "quizCount": "Quiz count",
+    "wrongCount": "Wrong answers",
+    "totalXP": "Total XP",
+    "badges": "Badges",
+    "earned": "earned",
+    "locked": "locked",
+    "continentProgress": "Continent Progress"
+  },
+  "country": {
+    "general": "General",
+    "political": "Politics & Government",
+    "practical": "Practical Info",
+    "neighbors": "Neighbor Countries",
+    "geography": "Geography",
+    "majorCities": "Major Cities",
+    "funFacts": "Fun Facts",
+    "flag": "Flag",
+    "capital": "Capital",
+    "population": "Population",
+    "area": "Area",
+    "coastline": "Coastline",
+    "languages": "Official Language(s)",
+    "currency": "Currency",
+    "government": "Government",
+    "independence": "Independence",
+    "unMembership": "UN Membership",
+    "memberships": "Memberships",
+    "callingCode": "Calling code",
+    "tld": "Domain (TLD)",
+    "drivingSide": "Driving side",
+    "timezone": "Time zone",
+    "nationalDay": "National day",
+    "highestPoint": "Highest point",
+    "longestRiver": "Longest river",
+    "largestLake": "Largest lake",
+    "drivingLeft": "Left",
+    "drivingRight": "Right",
+    "notFound": "Country not found",
+    "notFoundDesc": "Country with code {{id}} is not in the database.",
+    "colors": "Colors"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "theme": "Theme",
+    "themeSystem": "System",
+    "themeDark": "Dark",
+    "themeLight": "Light",
+    "sound": "Sound Effects",
+    "haptics": "Haptic Feedback",
+    "about": "About",
+    "version": "Version",
+    "resetData": "Reset Data",
+    "resetConfirm": "All your progress will be permanently deleted. Continue?",
+    "resetDone": "Data has been reset"
+  },
+  "difficulty": {
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard",
+    "expert": "Expert"
+  },
+  "level": {
+    "levelLabel": "LEVEL",
+    "next": "Next: Level {{level}}",
+    "maxReached": "🎉 You've reached the highest level!"
+  },
+  "continents": {
+    "Afrika": "Africa",
+    "Asya": "Asia",
+    "Avrupa": "Europe",
+    "Kuzey Amerika": "North America",
+    "Güney Amerika": "South America",
+    "Okyanusya": "Oceania"
+  },
+  "onboarding": {
+    "slide1Title": "Explore the World",
+    "slide1Desc": "A comprehensive encyclopedia with geographic, political and cultural data for 245 countries.",
+    "slide2Title": "6 Different Quiz Modes",
+    "slide2Desc": "From classic tests to flag matching, neighbor chains to speed rounds — 6 modes await you.",
+    "slide3Title": "Level Up, Earn Badges",
+    "slide3Desc": "Earn XP, advance through 50 levels, unlock new badges with every achievement.",
+    "skip": "Skip",
+    "next": "Next",
+    "start": "Start"
+  },
+  "leaderboard": {
+    "title": "Leaderboard",
+    "empty": "No records yet",
+    "emptyDesc": "Your top scores will appear here as you play quizzes."
+  },
+  "quizExtra": {
+    "wrongAnswers": "Wrong Answers",
+    "yourAnswer": "Your answer",
+    "correctAnswer": "Correct answer",
+    "notAnswered": "Not answered"
+  },
+  "neighborChain": {
+    "start": "START",
+    "target": "TARGET",
+    "optimalPath": "Optimal: {{optimal}} steps • Your path: {{player}} steps",
+    "neighborsOf": "{{country}} → neighbors",
+    "noNeighbors": "This country has no defined neighbors. (Island/landlocked)",
+    "undo": "Undo",
+    "giveUp": "Give Up",
+    "noPath": "No path found",
+    "noPathDesc": "A larger country dataset is needed to play this mode."
+  },
+  "daily": {
+    "instruction": "Find today's country. Each wrong guess reveals a new hint.",
+    "revealHint": "Reveal Hint",
+    "congrats": "Congratulations!",
+    "failed": "Not this time!",
+    "answerLabel": "Answer:",
+    "xpWon": "+{{xp}} XP earned",
+    "xpConsolation": "+10 XP consolation",
+    "finish": "Finish",
+    "guessPlaceholder": "Guess... ({{left}} left)",
+    "previousGuesses": "PREVIOUS GUESSES"
+  },
+  "flagMatch": {
+    "whichFlag": "Which country does this flag belong to?"
+  }
+}
