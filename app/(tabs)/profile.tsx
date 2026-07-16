@@ -9,6 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { Card } from '@/components/ui/Card';
+import { AdBanner } from '@/components/ads/AdBanner';
 import { ScreenContainer } from '@/components/ui/ScreenContainer';
 import { BadgeCard } from '@/components/gamification/BadgeCard';
 import { ContinentProgress } from '@/components/gamification/ContinentProgress';
@@ -68,6 +69,7 @@ export default function ProfileTab() {
   return (
     <ScreenContainer hasTabBar>
       <ScrollView
+        style={styles.scrollView}
         contentContainerStyle={styles.scroll}
         showsVerticalScrollIndicator={false}
       >
@@ -146,11 +148,16 @@ export default function ProfileTab() {
           ))}
         </View>
       </ScrollView>
+      <AdBanner />
     </ScreenContainer>
   );
 }
 
 const styles = StyleSheet.create({
+  // Banner alta yaslansın diye ScrollView kalan alanı kaplamalı.
+  scrollView: {
+    flex: 1,
+  },
   scroll: {
     paddingTop: SPACING.sm,
     paddingBottom: SPACING.xl,

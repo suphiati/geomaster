@@ -10,6 +10,7 @@ import { FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { Chip } from '@/components/ui/Chip';
 import { EmptyState } from '@/components/ui/EmptyState';
+import { AdBanner } from '@/components/ads/AdBanner';
 import { ScreenContainer } from '@/components/ui/ScreenContainer';
 import { SearchBar } from '@/components/ui/SearchBar';
 import { CountryCard } from '@/components/country/CountryCard';
@@ -137,6 +138,7 @@ export default function ExploreTab() {
         windowSize={10}
         removeClippedSubviews
       />
+      <AdBanner />
     </ScreenContainer>
   );
 }

@@ -11,6 +11,7 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
+import { AdBanner } from '@/components/ads/AdBanner';
 import { ScreenContainer } from '@/components/ui/ScreenContainer';
 import { StatRow } from '@/components/country/StatRow';
 import { BORDER_RADIUS, SPACING, TYPOGRAPHY } from '@/constants/theme';
@@ -109,6 +110,7 @@ export default function ResultScreen() {
     <ScreenContainer edgeToEdge>
       <Stack.Screen options={{ title: t('quiz.result.title'), headerBackVisible: false }} />
       <ScrollView
+        style={styles.scrollView}
         contentContainerStyle={styles.scroll}
         showsVerticalScrollIndicator={false}
       >
@@ -216,11 +218,16 @@ export default function ResultScreen() {
           />
         </View>
       </ScrollView>
+      <AdBanner />
     </ScreenContainer>
   );
 }
 
 const styles = StyleSheet.create({
+  // Banner alta yaslansın diye ScrollView kalan alanı kaplamalı.
+  scrollView: {
+    flex: 1,
+  },
   scroll: {
     paddingHorizontal: SPACING.md,
     paddingTop: SPACING.md,

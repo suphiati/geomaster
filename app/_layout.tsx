@@ -16,6 +16,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import 'react-native-reanimated';
 
 import { useI18nSync } from '@/hooks/useI18n';
+import { useMobileAds } from '@/hooks/useMobileAds';
 import { useTheme } from '@/hooks/useTheme';
 
 import '@/i18n';
@@ -31,6 +32,7 @@ export const unstable_settings = {
 export default function RootLayout() {
   const { isDark, palette } = useTheme();
   useI18nSync();
+  useMobileAds();
 
   // theme.ts'teki fontFamily adlarıyla birebir eşleşen anahtarlar altında yüklenir.
   const [fontsLoaded] = useFonts({
