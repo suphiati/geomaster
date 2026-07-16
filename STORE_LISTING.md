@@ -18,7 +18,7 @@ kısa açıklama **max 80 karakter**, tam açıklama **max 4000 karakter**.
 
 ### (b) Kısa Açıklama (max 80 karakter)
 ```
-245 ülke, 6 oyun modu. Çevrimdışı coğrafya quiz'i. Reklamsız, ücretsiz!
+245 ülke, 6 oyun modu. Çevrimdışı coğrafya quiz'i. Hesap yok, ücretsiz!
 ```
 
 ### (c) Tam Açıklama (max 4000 karakter)
@@ -49,11 +49,10 @@ Her ülke için bayrak, başkent, nüfus, para birimi, konuşulan diller, komşu
 
 ★ GİZLİLİĞİNİZE SAYGI
 • Hesap veya giriş yok
-• Kişisel veri TOPLANMAZ
-• Reklam YOK
-• Üçüncü taraf izleme YOK
+• Sizden kişisel veri toplamıyoruz
 • Uygulama içi satın alma YOK
-Sadece saf, reklamsız öğrenme deneyimi.
+• İlerlemeniz yalnızca cihazınızda kalır
+Uygulama ücretsiz kalabilsin diye banner reklam içerir.
 
 ★ TÜRKÇE VE İNGİLİZCE
 Uygulama tam Türkçe ve İngilizce dil desteği sunar.
@@ -93,7 +92,7 @@ genel kültür, beyin egzersizi
 
 ### (b) Short Description (max 80 characters)
 ```
-245 countries, 6 game modes. Offline geography quiz. Free & ad-free!
+245 countries, 6 game modes. Offline geography quiz. No account, free!
 ```
 
 ### (c) Full Description (max 4000 characters)
@@ -124,11 +123,10 @@ Play anywhere without an internet connection — on a plane, on the subway, on v
 
 ★ RESPECTS YOUR PRIVACY
 • No account or sign-in
-• NO personal data collected
-• NO ads
-• NO third-party tracking
+• We collect no personal data from you
 • NO in-app purchases
-Just a pure, ad-free learning experience.
+• Your progress stays on your device only
+The app contains banner ads so it can stay free.
 
 ★ TURKISH AND ENGLISH
 The app offers full Turkish and English language support.
@@ -155,28 +153,49 @@ world quiz, country quiz
 
 ---
 
-## PLAY CONSOLE "VERİ GÜVENLİĞİ" (DATA SAFETY) FORMU — ÖZET
+## PLAY CONSOLE BEYANLARI — REKLAM EKLENDİKTEN SONRA GÜNCELLENECEKLER
 
-Play Console > App content > **Data safety** bölümü doldurulurken aşağıdaki şekilde
-işaretlenmelidir (uygulama tamamen çevrimdışı ve veri toplamaz):
+⚠️ Uygulama artık **Google AdMob banner reklamı** içeriyor. Aşağıdaki beyanlar Play
+Console'da **güncellenmelidir**. Eski "reklamsız / veri toplanmıyor" beyanları artık
+yanlıştır ve gizlilik politikasıyla çelişen beyan **Play politika ihlalidir.**
 
-- **Does your app collect or share any of the required user data types?** → **No**
-  (Uygulama herhangi bir kullanıcı verisi toplamaz veya paylaşmaz.)
-- **Data collected** → (boş / hiçbiri)
-- **Data shared** → (boş / hiçbiri)
-- **Is all of the user data encrypted in transit?** → Uygulanabilir değil / veri
-  iletilmediği için soru genelde atlanır; iletilen veri yoksa "No data collected"
-  seçimiyle bu bölüm kapanır.
-- **Do you provide a way for users to request that their data is deleted?** → Kullanıcı
-  verisi toplanmadığı için gerekli değil; veriler cihazda yereldir ve uygulama içi
-  sıfırlama / kaldırma ile silinir.
+### 1. Ads (Reklam) — `App content > Reklam`
+- Eski: "Hayır, uygulamam reklam içermiyor"
+- **Yeni: "Evet, uygulamam reklam içeriyor"**
 
-Ek olarak doldurulması gerekenler:
-- **Privacy policy URL:** `PRIVACY.md` dosyasının yayınlandığı herkese açık URL
-  (bkz. PRIVACY.md içindeki yayın notu).
-- **Ads:** Uygulama reklam içermez → "No, my app does not contain ads" seçilmelidir.
-- **Content rating (İçerik derecelendirmesi):** IARC anketinde eğitici/herkese uygun
-  (3+) olarak yanıtlanmalı; şiddet, kullanıcı etkileşimi veya paylaşılan konum yoktur.
-- **Target audience & content (Hedef kitle):** Karma yaş grubu seçilebilir; çocuklar
-  dahil olduğundan "Designed for Families" / çocuk politikalarına uyum, veri
-  toplanmadığı için sorunsuzdur.
+### 2. Advertising ID (Reklam Kimliği) — `App content > Reklam Kimliği`
+- Eski: Hayır
+- **Yeni: Evet** — AdMob reklam kimliğini kullanır; `AD_ID` izni artık manifest'te
+  (config plugin ekliyor).
+
+### 3. Data safety (Veri Güvenliği) — **EN KRİTİK DEĞİŞİKLİK**
+- **"Uygulamanız kullanıcı verisi topluyor veya paylaşıyor mu?" → EVET**
+  (Eskiden "Hayır"dı — mutlaka değiştirilmeli.)
+- Beyan edilmesi gereken asgari tür:
+  - **Cihaz veya diğer kimlikler (Device or other IDs)** → **Toplanıyor VE Paylaşılıyor**
+    - Amaç: **Reklamcılık veya pazarlama**, ayrıca sahtecilik önleme/güvenlik
+    - Gerekçe: AdMob, Android Advertising ID'yi (AAID) kullanır ve Google'a aktarır.
+- **"Tüm kullanıcı verileri aktarım sırasında şifreleniyor mu?" → Evet** (Google reklam
+  trafiği HTTPS üzerinden gider.)
+- **"Kullanıcılar verilerinin silinmesini talep edebiliyor mu?"** → Kullanıcı, cihaz
+  ayarlarından reklam kimliğini sıfırlayabilir/silebilir; uygulama içi "Verileri sıfırla"
+  yerel veriyi siler.
+- 📖 Formu doldururken Google'ın **resmi AdMob veri güvenliği rehberini** esas al
+  (hangi türlerin işaretleneceğini Google burada tanımlar):
+  https://support.google.com/admob/answer/11150250
+
+### 4. Privacy policy
+- `PRIVACY.md` güncellendi: AdMob veri işleme, Google'a aktarım, AB/BK/İsviçre için UMP
+  onayı, `AD_ID` izni ve reklam kimliği kontrolleri eklendi.
+- Play'deki URL **değişmez**: https://github.com/suphiati/geomaster/blob/main/PRIVACY.md
+  (dosya güncellendiği için içerik otomatik güncel olur.)
+
+### 5. Target audience (Hedef kitle) — **13+ OLARAK KALMALI**
+- 13 yaş altı seçilirse uygulama Google'ın katı **"Aileler için Reklam Programı"**
+  kapsamına girer: yalnızca sertifikalı reklam ağları, **kişiselleştirilmemiş reklam
+  zorunluluğu** ve ek içerik kısıtları. Mevcut 13+ seçimi reklam için doğru olandır.
+
+### 6. Content rating (İçerik derecelendirmesi)
+- Mevcut "Herkes / PEGI 3" derecesi içerik açısından geçerliliğini korur (oyun içeriği
+  değişmedi). IARC anketinde reklam varlığı ayrıca sorulmaz; reklam beyanı yukarıdaki
+  "Ads" bölümünde yapılır.

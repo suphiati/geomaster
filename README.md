@@ -1,16 +1,17 @@
 # GeoMaster 🌍
 
-**GeoMaster**, 245 ülkeyi kapsayan, tamamen **çevrimdışı** çalışan eğitici bir coğrafya
-bilgi ve quiz oyunudur. Bayraklar, başkentler, nüfuslar, para birimleri, diller, komşu
-ülkeler ve landmark'lar tek uygulamada — internet olmadan, reklamsız, kişisel veri
-toplamadan.
+**GeoMaster**, 245 ülkeyi kapsayan, içeriği tamamen **çevrimdışı** çalışan eğitici bir
+coğrafya bilgi ve quiz oyunudur. Bayraklar, başkentler, nüfuslar, para birimleri, diller,
+komşu ülkeler ve landmark'lar tek uygulamada — internet olmadan, hesap açmadan, kişisel
+veri toplamadan.
 
 - 📦 **245 ülke** — bayrak, başkent, nüfus, para birimi, dil, komşular, landmark ve daha fazlası
 - 🎮 **6 oyun modu** — Klasik, Doğru/Yanlış, Hız Turu, Bayrak Eşleştirme, Komşu Zinciri, Günlük Challenge
 - 🏆 **Oyunlaştırma** — XP, seviye, rozetler, günlük streak
 - 🌐 **İki dil** — Türkçe ve İngilizce
-- 🔒 **Gizlilik odaklı** — tamamen offline, veri toplamaz, hesap gerektirmez
-- 🆓 **Ücretsiz ve reklamsız** — uygulama içi satın alma yok
+- 🔒 **Gizlilik odaklı** — içerik offline, geliştirici olarak veri toplamıyoruz, hesap gerektirmez
+- 🆓 **Ücretsiz** — uygulama içi satın alma yok; ücretsiz kalabilmesi için Google AdMob banner reklamı içerir
+  (AB/BK/İsviçre'de UMP onay formu gösterilir — bkz. [PRIVACY.md](PRIVACY.md))
 
 > Paket adı: `com.suphicelikoz.geomaster` · İletişim: suphi.celikoz@gmail.com
 
@@ -139,8 +140,13 @@ gerekir.
 
 ## Gizlilik
 
-GeoMaster tamamen çevrimdışı çalışır; kişisel veri toplamaz, hiçbir veriyi sunucuya
-göndermez ve üçüncü taraf analitik/reklam içermez. Ayrıntılar için
+GeoMaster'ın içeriği çevrimdışı çalışır ve **geliştirici olarak sizden kişisel veri
+toplamıyoruz** — hesap yok, sunucumuz yok, kendi analitiğimiz yok. İlerlemeniz yalnızca
+cihazınızda kalır.
+
+Uygulama ücretsiz kalabilmesi için **Google AdMob banner reklamı** içerir. Reklam sunmak
+ve ölçmek amacıyla Google, üçüncü taraf olarak reklam kimliği ve IP gibi verileri
+toplar/işler; AB/BK/İsviçre'de UMP onay formu gösterilir. Ayrıntılar için
 [PRIVACY.md](./PRIVACY.md) dosyasına bakın.
 
 ## Lisans & İletişim
