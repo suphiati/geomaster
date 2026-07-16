@@ -4,7 +4,7 @@
 
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Constants from 'expo-constants';
-import { Stack } from 'expo-router';
+import { Stack, useRouter } from 'expo-router';
 import { Alert, ScrollView, StyleSheet, Switch, Text, View } from 'react-native';
 
 import { Card } from '@/components/ui/Card';
@@ -38,6 +38,7 @@ const Row = ({ icon, label, children }: RowProps) => {
 };
 
 export default function SettingsScreen() {
+  const router = useRouter();
   const { palette } = useTheme();
   const { t } = useTranslation();
   const { language, themeMode, soundEnabled, hapticsEnabled, setLanguage, setThemeMode, setSoundEnabled, setHapticsEnabled } =
@@ -52,6 +53,10 @@ export default function SettingsScreen() {
         onPress: () => {
           useGameStore.getState().reset();
           useProgressStore.getState().reset();
+          // Uygulamayı ilk kurulum haline döndür: onboarding tekrar gösterilsin.
+          // Dil/tema/ses tercihleri bilinçli olarak korunur (tüm settings sıfırlanmaz).
+          useSettingsStore.setState({ hasCompletedOnboarding: false });
+          router.replace('/onboarding');
         },
       },
     ]);

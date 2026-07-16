@@ -24,7 +24,7 @@ export default function QuizTab() {
   };
 
   return (
-    <ScreenContainer>
+    <ScreenContainer hasTabBar>
       <ScrollView
         contentContainerStyle={styles.scroll}
         showsVerticalScrollIndicator={false}

@@ -27,7 +27,7 @@ export default function HomeTab() {
   const totalCorrect = useGameStore((s) => s.totalCorrect);
 
   return (
-    <ScreenContainer>
+    <ScreenContainer hasTabBar>
       <ScrollView
         contentContainerStyle={styles.scroll}
         showsVerticalScrollIndicator={false}

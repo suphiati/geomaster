@@ -66,7 +66,7 @@ export default function ProfileTab() {
   const earnedSet = new Set(earnedBadgeIds);
 
   return (
-    <ScreenContainer>
+    <ScreenContainer hasTabBar>
       <ScrollView
         contentContainerStyle={styles.scroll}
         showsVerticalScrollIndicator={false}

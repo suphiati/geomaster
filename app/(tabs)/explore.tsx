@@ -53,7 +53,7 @@ export default function ExploreTab() {
   );
 
   return (
-    <ScreenContainer>
+    <ScreenContainer hasTabBar>
       <View style={styles.header}>
         <Text style={[TYPOGRAPHY.h1, { color: palette.text.primary }]}>{t('explore.title')}</Text>
         <Text style={[TYPOGRAPHY.bodySm, { color: palette.text.secondary, marginTop: 2 }]}>
